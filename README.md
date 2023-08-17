@@ -16,7 +16,8 @@ Dentro de la carpeta templates\laboratorio_app se encuentran todos los archivos 
 La base de datos está ubicada en la carpeta raíz con el nombre "laboratorio.db"
 
 Para ejecurtar:
-Debe ir a la carpeta raiz, abrir la terminar y escribir el siguiente código: 
+
+Debe ir a la carpeta raiz, abrir la terminar y escribir el siguiente código
 
 ```
 py manage.py runserser
