@@ -6,7 +6,7 @@
 
 En "laboratorio_app" encontrará las distintas carpetas para un deployment de la página web:
 + URLS.PY podrá visualizar las rutas para ingresar a cada una de las páginas de la web, carga de formulario y búsqueda.
-  Cabe aclarar que las rutas "profesionalesform" y "buscarfrofesionales" se encuentran ocultas para el usuario. Para su utilización deberá cargar dicha ruta en el URL del navegador. 
+  Cabe aclarar que las rutas "profesionalesform" y "buscarprofesionales" se encuentran ocultas para el usuario. Para su utilización deberá cargar dicha ruta en el URL del navegador. 
 + VIEWS.PY observará las distintas funciones creadas para llevar a cabo la renderizción de cada página.  
 + MODELS.PY en este archivo se encuentran las clases del modelo de base de dato.
 + FORMS.PY aqui verá la clase formulario para que se despliegue después la carga de datos.
