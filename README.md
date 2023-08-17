@@ -18,9 +18,9 @@ La base de datos está ubicada en la carpeta raíz con el nombre "laboratorio.db
 Para ejecurtar:
 Debe ir a la carpeta raiz, abrir la terminar y escribir el siguiente código: 
 
-'''
-py manage.py runserser
-'''
+```
+py manage.py runserver
+```
 
 ## Versionado 📌
 
