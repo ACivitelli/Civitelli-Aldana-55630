@@ -6,8 +6,8 @@ class Profesionales(models.Model):
     nombre = models.CharField(max_length=50)
     apellido= models.CharField(max_length=50)
     email = models.EmailField()
-    matricula = models.CharField(max_length=50)
-    id_especializacion = models.CharField(max_length=50)
+    matricula = models.IntegerField(max_length=50)
+    m_especializacion = models.CharField(max_length=50)
     
     def __str__(self):
         return f"{self.nombre}"

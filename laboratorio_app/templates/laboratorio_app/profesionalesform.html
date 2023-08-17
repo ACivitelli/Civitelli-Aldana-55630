@@ -1,4 +1,4 @@
-{% comment %} {% extends 'laboratorio_app/base.html' %} {% endcomment %}
+{% extends 'laboratorio_app/base.html' %}
 {% load static %}
 
 {% block titulocarga %}
@@ -13,7 +13,5 @@
             {{ form.as_table }}
         </table>    
         <input type="submit" value="Cargar">        
-    </form>   
-    <h2>"Se cargó con éxito el profesional"</h2>
-
+    </form>     
 {% endblock contenidocarga %}     

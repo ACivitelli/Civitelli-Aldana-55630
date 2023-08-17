@@ -9,22 +9,24 @@
 {% block contenidoP %}
     <h1>Conocé a nuestro equipo:</h1>
 
-    <table class="table table-dark table-borderless">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Médicos</th>
                 <th>Matricula</th>   
                 <th>Especialización</th>         
-            </tr>    
+            </tr>   
         </thead>
-        <tbody>    
-    {% for c in staff_profesionales %}
+        <tbody>
+        {% for c in profesionales %}
                 <tr>
                     <td>{{c.nombre}},{{c.apellido}} </td>
                     <td>{{c.matricula}}</td>
-                    <td>{{c.id_especializacion}}</td>
+                    <td>{{c.m_especializacion}}</td>
                 </tr>  
-    {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>    
     
 {% endblock contenidoP %} 
 

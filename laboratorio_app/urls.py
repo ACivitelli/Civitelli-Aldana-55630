@@ -9,7 +9,7 @@ urlpatterns = [
     path('preguntasfrecuentes/', preguntasfrecuentes, name="preguntasfrecuentes"),
     path('contactanos/', contactanos, name="contactanos"),
     
-   path('profesionalesform/', profesionalesForm, name="profesionalesForm"),
+   path('profesionalesform/', profesionalesform, name="profesionalesform"),
    
    path('buscarprofesionales/', buscarProfesional, name="buscarprofesional"),
    path('buscar/', buscar),

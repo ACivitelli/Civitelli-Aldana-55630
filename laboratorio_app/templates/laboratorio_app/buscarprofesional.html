@@ -8,10 +8,11 @@
 {% block contenido %}
     <h2>Buscar médico:</h2>
     <form action="/buscar/" method="GET">
-        
-        {% comment %} <p>Médico a buscar:  {% endcomment %}
-            <input type="text" name="nombre" id="nombre">, 
-            <input type="text" name="especializacion" id="especializacion">
+        <p>
+            <h5>Nombre: <input type="text" name="nombre" id="nombre"></h3>    
+        <p>
+            <h5>Especializacion: <input type="text" name="especializacion" id="especializacion"></h3>
+        <p>
         <input type="submit" value="Consultar">
     </form>    
 
