@@ -1,0 +1,19 @@
+{% comment %} {% extends 'laboratorio_app/base.html' %} {% endcomment %}
+{% load static %}
+
+{% block titulocarga %}
+    Nuevo profesional
+{% endblock titulocarga %}
+
+{% block contenidocarga %}
+    <h2>Ingreso de datos al staff de profesionales</h2>
+    <form action="/profesionalesform/" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>    
+        <input type="submit" value="Cargar">        
+    </form>   
+    <h2>"Se cargó con éxito el profesional"</h2>
+
+{% endblock contenidocarga %}     

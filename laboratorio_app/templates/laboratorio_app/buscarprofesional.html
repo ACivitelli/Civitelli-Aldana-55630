@@ -1,0 +1,18 @@
+{% extends 'laboratorio_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Busqueda de profesional
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Buscar médico:</h2>
+    <form action="/buscar/" method="GET">
+        
+        {% comment %} <p>Médico a buscar:  {% endcomment %}
+            <input type="text" name="nombre" id="nombre">, 
+            <input type="text" name="especializacion" id="especializacion">
+        <input type="submit" value="Consultar">
+    </form>    
+
+{% endblock contenido %}
