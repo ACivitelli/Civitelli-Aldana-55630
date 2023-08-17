@@ -19,7 +19,8 @@ Para ejecurtar:
 Debe ir a la carpeta raiz, abrir la terminar y escribir el siguiente código: 
 
 ```
-py manage.py runserver
+py manage.py runserser
+
 ```
 
 ## Versionado 📌
