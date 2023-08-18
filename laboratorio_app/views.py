@@ -46,20 +46,17 @@ def profesionalesform(request):
 
     return render(request,"laboratorio_app/profesionalesform.html", {"form": miForm})
 
-def buscarProfesional(request):
+def buscarprofesional(request):
     return render(request,"laboratorio_app/buscarprofesional.html")
 
 def buscar(request):
-
-    if request.get['nombre']:
-        nombre = request.get['nombre']
-        datos_profesionales = Profesionales.objects.filter(nombre__icontains=nombre)
-        staff_profesionales = {
-            'nombre': nombre,
-            'datos_profesionales':datos_profesionales
-            }
-        return (request, "laboratorio_app/buscarprofesional.html", staff_profesionales)
-
+    if request.GET['especializacion']:
+        busqueda = request.GET['especializacion']
+        print('busqueda: ', busqueda)
+        m_profesionales = Profesionales.objects.filter(m_especializacion=busqueda)
+        staff_profesionales = {"profesionales": m_profesionales}
+        
+        return render (request, "laboratorio_app/profesionales.html", staff_profesionales)
     return HttpResponse("No se ingresó nada a buscar")
 
 

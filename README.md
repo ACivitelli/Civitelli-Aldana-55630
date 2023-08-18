@@ -20,7 +20,7 @@ Para ejecurtar:
 Debe ir a la carpeta raiz, abrir la terminar y escribir el siguiente código
 
 ```
-py manage.py runserser
+py manage.py runserver
 
 ```
 

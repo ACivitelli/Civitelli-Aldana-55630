@@ -11,7 +11,7 @@ urlpatterns = [
     
    path('profesionalesform/', profesionalesform, name="profesionalesform"),
    
-   path('buscarprofesionales/', buscarProfesional, name="buscarprofesional"),
-   path('buscar/', buscar),
+   path('buscarprofesional/', buscarprofesional, name="buscarprofesional"),
+   path('buscar/', buscar, name="buscar"),
    
 ]
