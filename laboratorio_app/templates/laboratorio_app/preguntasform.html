@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block titulocarga %}
-    Preguntas frecuentes
+    Registro de pacientes
 {% endblock titulocarga %}
 
-{% block contenidocarga %}
-    <h2>Ingreso de preguntas frecuentes:</h2>
-    <form action="/preguntasform/" method="POST">
+{% block contenido %}
+    <h2>Ingreso de datos de nuestros pacientes</h2>
+    <form action="/pacientesform/" method="POST">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>    
-        <input type="submit" value="Cargar">        
+        <input class="btn btn-primary" type="submit" value="Cargar">        
     </form>     
-{% endblock contenidocarga %}     
+{% endblock contenido %}     
