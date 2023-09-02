@@ -2,14 +2,16 @@
 {% load static %}
 
 {% block titulo %}
-    Busqueda de profesionales
+    Busqueda de profesionales por especialización
 {% endblock titulo %}
 
-{% block contenido %}
-    <h2>Buscar médicos por especialización</h2>
-    <form action="/buscar" method="get">   
+{% block contenidoA %}
+    
+    <form class="form-signin row gx-4 gx-lg-5 justify-content-center" action="/buscar" method="get">   
         {% csrf_token %}
-        <p>Especialización: <input type="text" name="especializacion" id="especializacion"></p>
-        <input class="btn btn-primary" type="submit" value="Consultar">
+        <div class="col-lg-6 col-xl-6 text-center">
+            <p>Especialización: <input type="text" name="especializacion" id="especializacion"></p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Consultar</button>
+        </div>
     </form>    
-{% endblock contenido %}
+{% endblock contenidoA %}
