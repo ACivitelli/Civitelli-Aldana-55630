@@ -2,22 +2,32 @@
 {% load static %}
 
 {% block titulo %}
-    Editar perfil
+Editar perfil 
 {% endblock titulo %}
 
-{% block contenido %}
-
+{% block contenidologin %}
     <br/>
-    <h2>Editar perfil</h2>
-    <form action="/editarperfil/" method="post">
+    
+    <form class="form-signin row gx-4 gx-lg-5 justify-content-center" action="/editarperfil/" method="post">
         {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <br/>
-        <input class="btn btn-primary" type="submit" value="Actualizar perfil">        
+        <div class="col-lg-6 col-xl-6 text-center">
+            <table>
+                {{ form.as_table }}
+            </table>
+            <br/>
+            
+            <input class="btn btn-primary" type="submit" value="Actualizar perfil" style="width: 40%;"> 
+        </div>
+
+        <div class="col-lg-4 col-xl-6 text-center">
+            <h5 style="color: white;">Si desea puede actualizar su avatar</h5>
+            <div class="text-center">
+                <img src="{{ request.session.avatar }}" href ="{% url 'agregaravatar' %}" height="165px" weight="180px"/>
+            </div>                   
+            <a class="btn btn-primary" href="{% url 'agregaravatar' %}">Agregar</a>
+        </div>
+        
     </form>
     <br/>
-    <h5>Si desea puede actualizar su avatar</h5>
-    <a class="btn btn-primary" href="{% url 'agregaravatar' %}">Agregar</a>
-{% endblock contenido %}
+
+{% endblock contenidologin %}
