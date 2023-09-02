@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block titulo %}
-    Login 
+    <h3 style="color: white;">Por favor inicie sesión </h3>
 {% endblock titulo %}
 
-{% block contenido %}
-    {% comment %} <h2 class="mt-0">Login</h2> {% endcomment %}
+{% block contenidologin %}
+    <!-- {% comment %} <h2 class="mt-0">Login</h2> {% endcomment %}
     <form action="/login/" method="post"> 
         {% csrf_token %}
         
@@ -24,7 +24,30 @@
 
         </div>  
 
-    </form>
+    </form> -->
+
+    
+    <form class="form-signin row gx-4 gx-lg-5 justify-content-center" action="/login/" method="post">
+        {% csrf_token %}
+        <div class="col-lg-6 col-xl-6 text-center">
+
+            <br/>
+            <img class="mb-4" src="../../../media/avatares/default.png" height="120px" weight="120px"/>
+            <br/>
+            
+            <label for="username" class="sr-only">Usuario</label>
+            <input type="username" id="username" name="username" placeholder="Usuario" required="True" autofocus="">
+
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="id_password" name="password" placeholder="Contraseña" required="True">
+
+            <br/>
+            <br/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
+            
+        </div>
+      </form>
+    <br/>    
 
       
-{% endblock contenido %}
+{% endblock contenidologin %}
