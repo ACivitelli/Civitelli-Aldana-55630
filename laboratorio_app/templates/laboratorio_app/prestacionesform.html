@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block titulocarga %}
-    Nuestros profesionales
+    Lista de precios de las prestaciones 
 {% endblock titulocarga %}
 
 {% block contenido %}
-    <h2>Ingreso de datos al staff de profesionales</h2>
-    <form action="/profesionalesform/" method="POST">
+    <h2>Ingreso de las prestaciones médicas y sus costos</h2>
+    <form action="/prestacionesform/" method="POST">
         {% csrf_token %}
         <table>
             {{ form.as_table }}

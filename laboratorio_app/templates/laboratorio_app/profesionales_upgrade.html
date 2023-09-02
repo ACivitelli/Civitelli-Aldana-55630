@@ -1,0 +1,17 @@
+{% extends 'laboratorio_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Nuestros profesionales
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Modificar/actualizar datos del profesional:</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>    
+        <input type="submit" value="Actualizar">        
+    </form>     
+{% endblock contenido %}

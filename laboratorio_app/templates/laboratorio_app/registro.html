@@ -1,0 +1,17 @@
+{% extends 'laboratorio_app/base.html' %}
+{% load static %}
+
+{% block tituloRegistroP %}
+    Registros de datos
+{% endblock tituloRegistroP %}
+
+{% block contenido %}
+    <h2>Registro de usuario</h2>
+    <form action="/registro/" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="registrarse">
+    </form>
+{% endblock contenido %}

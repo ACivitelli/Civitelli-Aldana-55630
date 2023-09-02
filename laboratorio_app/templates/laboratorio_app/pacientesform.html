@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block titulocarga %}
-    Nuestros profesionales
+    Registro de pacientes
 {% endblock titulocarga %}
 
 {% block contenido %}
-    <h2>Ingreso de datos al staff de profesionales</h2>
-    <form action="/profesionalesform/" method="POST">
+    <h2>Ingreso de datos de nuestros pacientes</h2>
+    <form action="/pacientesform/" method="POST">
         {% csrf_token %}
         <table>
             {{ form.as_table }}

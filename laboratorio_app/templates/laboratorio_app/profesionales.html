@@ -1,32 +1,73 @@
 {% extends 'laboratorio_app/base.html' %}
 {% load static%}
 
-{% block tituloP %}
-    Nuestro staff de médicos
-{% endblock tituloP %}
+{% block titulo %}
+    Staff de médicos
+{% endblock titulo %}
 
 
-{% block contenidoP %}
-    <h1>Conocé a nuestro equipo:</h1>
+{% block contenido %}
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Médicos</th>
-                <th>Matricula</th>   
-                <th>Especialización</th>         
-            </tr>   
-        </thead>
-        <tbody>
-        {% for c in profesionales %}
-                <tr>
-                    <td>{{c.nombre}},{{c.apellido}} </td>
-                    <td>{{c.matricula}}</td>
-                    <td>{{c.m_especializacion}}</td>
-                </tr>  
-        {% endfor %}
-        </tbody>
-    </table>    
+<table>
+    <tr>
+        <td width="600"><h1>Médicos profesionales:</h1>
+            <a
+            href= "{% url 'crearprofesional' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-sm" title="Nuevo Registro"> </i>
+            </a>
+
+            <a
+            href= "{% url 'buscarprofesional' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-search fa-sm" title="Busqueda Registros"> </i>
+            </a>    
+
+            <br />
+        </td>
     
-{% endblock contenidoP %} 
+    </tr>
+</table>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Matricula</th>
+            <th>Especializacion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for p  in profesionales %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.apellido }}</td>
+        <td>{{ p.email }}</td>
+        <td>{{ p.matricula }}</td>
+        <td>{{ p.m_especializacion }}</td>
+        <td>
+            <a
+              href="{% url 'updateMedicos' p.id %}"
+              class="btn btn-primary"
+              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+              ><i class="fa fa-edit fa-sm" title="Editar Registro"></i>
+            </a>
+            <a
+              href="{% url 'deleteprofesional' p.id %}" 
+              class="btn btn-danger"
+              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+              ><i class="fa fa-trash fa-sm" title="Eliminar Registro"></i>
+            </a>
+        </td>        
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>  
+<h6> Cantidad de profesionales cargados:{{profesionales|length}}</h6>
+
+{% endblock contenido %} 

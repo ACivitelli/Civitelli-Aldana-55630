@@ -1,0 +1,17 @@
+{% extends 'laboratorio_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Agregar avatar
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Agregar avatar</h2>
+    <form action="/agregaravatar/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Crear avatar">
+    </form>
+{% endblock contenido %}

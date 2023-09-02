@@ -1,0 +1,17 @@
+{% extends 'laboratorio_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Lista de precios de las prestaciones
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Modificar/actualizar prestaciones y valor:</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>    
+        <input type="submit" value="Actualizar">        
+    </form>     
+{% endblock contenido %}

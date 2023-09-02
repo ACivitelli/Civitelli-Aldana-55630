@@ -1,21 +1,60 @@
-# CoderHouse
+# CoderHouse - comision 55630 - curso Python
 
-## Tercera-pre-entrega-Civitelli
+## Civitelli Aldana - proyecto final
 
-### Web en desarrollo "Laboratorio privado LABPAI"
+### Sitio Web "Laboratorio privado LABPAI"
 
-En "laboratorio_app" encontrará las distintas carpetas para un deployment de la página web:
-+ URLS.PY podrá visualizar las rutas para ingresar a cada una de las páginas de la web, carga de formulario y búsqueda.
-  Cabe aclarar que las rutas "profesionalesform" y "buscarprofesionales" se encuentran ocultas para el usuario. Para su utilización deberá cargar dicha ruta en el URL del navegador. 
-+ VIEWS.PY observará las distintas funciones creadas para llevar a cabo la renderizción de cada página.  
-+ MODELS.PY en este archivo se encuentran las clases del modelo de base de dato.
-+ FORMS.PY aqui verá la clase formulario para que se despliegue después la carga de datos.
+Este sitio web tiene el objetivo de administrar un laboratorio, cargando y visualizando profesionales, pacientes , estudios y sus costos, preguntas frecuentes, posibilidad de contactarnos e información del autor.
 
-Dentro de la carpeta templates\laboratorio_app se encuentran todos los archivos HTML. 
+Esta es la primera versión del mismo.
 
-La base de datos está ubicada en la carpeta raíz con el nombre "laboratorio.db"
+En la carpeta "laboratorio_app" encontrará las distintas subcarpetas y archivos que componen la aplicacion, iremos explicando cada uno de manera breve.
 
-Para ejecurtar:
++ CASOS DE TEST:
+  + Aquí se deja un archivo excel con los casos de prueba de la aplicación.
+
++ MIGRATIONS
+  + Corresponde a las migraciones que fuí realizando a la base de datos.
+
++ STATIC/LABORATORIO_APP
+  + assets -> imágenes que fueron usadas para el sitio.
+  + css -> archivo que configura el estilo del sitio.
+  + js -> Aquí se encuentran funciones de javascript que le dan vida a nuestro sitio.
+
++ TEMPLATES/LABORATORIO_APP
+  + Esta carpeta contiene todas las páginas web del sitio como Estudios, Login, Registro, Edición de perfil, Profesionales, Prestaciones,entre otras. 
+
++ LABORATORIO.DB Base de datos.
+
++ MANAGE.PY Administrador del sitio web.
+
++ URLS.PY podrá visualizar las rutas para ingresar a cada una de las páginas web del sitio, como la carga de formulario, búsqueda, estudios, preguntas frecuentes, contáctenos, login, registros, edición de perfil, profesionales y demas páginas.
+  (Cabe aclarar que algunas rutas se encuentran ocultas para el usuario. Para su visualización deberá estar logueado.)
+
++ VIEWS.PY observará las distintas funciones creadas para llevar a cabo la renderizción de cada página, como la obtención de profesionales, registro de administradores, guardado de cambios de perfil, y demás.  
+
++ MODELS.PY en este archivo se encuentran las clases del modelo de la base de datos.
+  + Class Profesionales
+    + Atributos: Nombre, Apellido, Matricula, Mail y Especialización.
+  + Class Pacientes
+    + Atributos: Nombre, Apellido, Email, Documento y Teléfono.
+  + Class Estudios
+    + Atributos: Prestación y valor.
+  + Class Preguntas Frecuentes
+    + Atributos: Pregunta y respuesta.
+  + Class Contactos
+    + Atributos: Teléfono, Email, Dirección y Horarios.
+  + Class Avatar
+    + Atributos: Imágen y User.
+
++ FORMS.PY aquí verá las clases de formularios para que se despliegue después la carga de datos, como por ejemplo, para cada Class de Models.py informado anteriormente.
+
+## Login administrador: 📌
+
+Usuario: LABadmin
+Password: proyectofinal#
+
+## Para ejecutar: 📌
 
 Debe ir a la carpeta raiz, abrir la terminar y escribir el siguiente código
 
@@ -35,5 +74,3 @@ Para todas las versiones disponibles, mira los [tags en este repositorio](https:
 ## Licencia 📄
 
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
-
-

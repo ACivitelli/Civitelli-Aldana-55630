@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block titulocarga %}
-    Nuestros profesionales
+    Preguntas frecuentes
 {% endblock titulocarga %}
 
-{% block contenido %}
-    <h2>Ingreso de datos al staff de profesionales</h2>
-    <form action="/profesionalesform/" method="POST">
+{% block contenidocarga %}
+    <h2>Ingreso de preguntas frecuentes:</h2>
+    <form action="/preguntasform/" method="POST">
         {% csrf_token %}
         <table>
             {{ form.as_table }}
         </table>    
         <input type="submit" value="Cargar">        
     </form>     
-{% endblock contenido %}     
+{% endblock contenidocarga %}     

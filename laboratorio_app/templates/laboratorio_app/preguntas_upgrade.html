@@ -1,0 +1,17 @@
+{% extends 'laboratorio_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Preguntas frecuentes
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Modificar/actualizar las preguntas frecuentes:</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>    
+        <input type="submit" value="Actualizar">        
+    </form>     
+{% endblock contenido %}

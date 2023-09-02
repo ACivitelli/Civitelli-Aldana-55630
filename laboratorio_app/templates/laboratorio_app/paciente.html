@@ -2,21 +2,25 @@
 {% load static%}
 
 {% block titulo %}
-    Preguntas Frecuentes
+    Registro de pacientes 
 {% endblock titulo %}
 
 {% block contenido %}
 
-{% if user.is_authenticated %}
-{% comment %} COMO SE VERIA LOGUEADO {% endcomment %}
 <table>
     <tr>
-        <td width="600"><h1>Carga de preguntas frecuentes:</h1>
-            <a @login_required
-            href= "{% url 'crearpregunta' %}"
+        <td width="600"><h1>Listado de pacientes:</h1>
+            
+            <a
+            href= "{% url 'crearpaciente' %}"
             class="btn btn-primary btn-sm"
             ><i class="fa fa-plus fa-sm" title="Nuevo Registro"> </i>
             </a>
+            <a
+            href= "{% url 'buscarpaciente' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-search fa-sm" title="Buscar Registro"> </i>
+            </a>                        
             <br />
         </td>
     </tr>
@@ -26,26 +30,32 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Pregunta</th>
-            <th>Respuesta</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Documento</th>
+            <th>Telefono</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-    {% for p  in preguntas %}
+    {% for p  in pacientes %}
     <tr>
         <td>{{ p.id }}</td>
-        <td>{{ p.pregunta }}</td>
-        <td>{{ p.respuesta }}</td>
+        <td>{{ p.nombre }}</td>
+        <td>{{ p.apellido }}</td>
+        <td>{{ p.email }}</td>
+        <td>{{ p.documento }}</td>
+        <td>{{ p.telefono }}</td>
         <td>
-            <a @login_required
-              href="{% url 'updatePregunta' p.id %}"
+            <a
+              href="{% url 'updatePaciente' p.id %}"
               class="btn btn-primary"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
               ><i class="fa fa-edit fa-sm" title="Editar Registro"></i>
             </a>
-            <a @login_required
-              href="{% url 'deletePregunta' p.id %}" 
+            <a
+              href="{% url 'deletePaciente' p.id %}" 
               class="btn btn-danger"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
               ><i class="fa fa-trash fa-sm" title="Eliminar Registro"></i>
@@ -55,30 +65,5 @@
     {% endfor %}
     </tbody>
 </table>  
-
-{% else %}
-
-{% comment %} COMO SE VERIA SIN LOGUEARSE {% endcomment %}
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Pregunta</th>
-            <th>Respuesta</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for p  in preguntas %}
-    <tr>
-        <td>{{ p.pregunta }}</td>
-        <td>{{ p.respuesta }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>  
-
-{% endif %}
-
+<h6> Cantidad de profesionales cargados:{{pacientes|length}}</h6>
 {% endblock contenido %} 
-
-

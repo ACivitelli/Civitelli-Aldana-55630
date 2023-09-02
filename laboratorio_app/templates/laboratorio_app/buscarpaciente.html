@@ -2,14 +2,15 @@
 {% load static %}
 
 {% block titulo %}
-    Busqueda de profesionales
+    Busqueda de paciente
 {% endblock titulo %}
 
 {% block contenido %}
-    <h2>Buscar médicos por especialización</h2>
-    <form action="/buscar" method="get">   
+    <h2>Buscar paciente por documento</h2>
+    <form action="/buscarp" method="get">   
         {% csrf_token %}
-        <p>Especialización: <input type="text" name="especializacion" id="especializacion"></p>
+        <p>Documento: <input type="integer" name="documento" id="documento"></p>
         <input class="btn btn-primary" type="submit" value="Consultar">
+        
     </form>    
 {% endblock contenido %}
