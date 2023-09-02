@@ -354,6 +354,7 @@ def register(request):
 def editarperfil(request):
     if request.method == 'POST':
         form = UserEditform(request.POST, instance=request.user)  # Pasar instancia de usuario actual
+        print(form)
         if form.is_valid():
             form.save()  # Guardar los cambios en el perfil del usuario
             return render(request,"laboratorio_app/base.html")  # Redirigir a la página de perfil o a donde desees
