@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block titulo %}
-    Busqueda de paciente
+    Busqueda de paciente por documento
 {% endblock titulo %}
 
-{% block contenido %}
-    <h2>Buscar paciente por documento</h2>
-    <form action="/buscarp" method="get">   
+{% block contenidoA %}
+    
+    <form class="form-signin row gx-4 gx-lg-5 justify-content-center" action="/buscarp" method="get">   
         {% csrf_token %}
-        <p>Documento: <input type="integer" name="documento" id="documento"></p>
-        <input class="btn btn-primary" type="submit" value="Consultar">
-        
+        <div class="col-lg-6 col-xl-6 text-center">
+            <p>Documento: <input type="integer" name="documento" id="documento"></p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Consultar</button>
+        </div>
     </form>    
-{% endblock contenido %}
+{% endblock contenidoA %}
