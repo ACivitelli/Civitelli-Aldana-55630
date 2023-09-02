@@ -5,7 +5,7 @@
     Agregar avatar
 {% endblock titulo %}
 
-{% block contenidologin %}
+{% block contenidoA %}
     
     <form class="form-signin row gx-4 gx-lg-5 justify-content-center" action="/agregaravatar/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -17,4 +17,4 @@
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Crear Avatar</button>
         </div>
     </form>
-{% endblock contenidologin %}
+{% endblock contenidoA %}
