@@ -51,8 +51,8 @@ En la carpeta "laboratorio_app" encontrará las distintas subcarpetas y archivos
 
 ## Login administrador: 📌
 
-+ Usuario: AdminLABPAI
-+ Password: proyectofinal23
++ Usuario: LABadmin
++ Password: laboratorioadmin#
 
 ## Para ejecutar: 📌
 
