@@ -6,26 +6,6 @@
 {% endblock titulo %}
 
 {% block contenidologin %}
-    <!-- {% comment %} <h2 class="mt-0">Login</h2> {% endcomment %}
-    <form action="/login/" method="post"> 
-        {% csrf_token %}
-        
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-8 col-xl-6 text-center">
-                <p class="text-muted mb-3">Inicie sesión</p>
-                <table>  
-                    <p class="text-muted mb-3"></p>
-                    <div> {{ form.as_table }} </div> 
-                </table>        
-                <br />
-                <button type="submit" class="btn btn-primary">Iniciar</button>      
-                 
-            </div>
-
-        </div>  
-
-    </form> -->
-
     
     <form class="form-signin row gx-4 gx-lg-5 justify-content-center" action="/login/" method="post">
         {% csrf_token %}
