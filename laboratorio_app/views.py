@@ -350,24 +350,17 @@ def register(request):
             
     return render(request, "laboratorio_app/registro.html", {"form":miForm})  
 
-@login_required
+@login_required  # Asegura que el usuario esté autenticado para acceder a esta vista
 def editarperfil(request):
-   usuario = request.user 
-   if request.method == "POST":
-       form = UserEditform(request.POST)
-       if form.is_valid():
-           usuario.email = form.cleaned_data.get('email')
-           usuario.password1 = form.cleaned_data.get('pasword1')
-           usuario.password2 = form.cleaned_data.get('password2')
-           usuario.first_name = form.cleaned_data.get('first_name')
-           usuario.last_name = form.cleaned_data.get('last_name')
-           usuario.save()
-           return render(request,"laboratorio_app/base.html")
-       else:
-           return render(request, "laboratorio_app/editarperfil.html", {'form': form, 'usuario': usuario.username})
-   else:
-        form = UserEditform(instance=usuario)
-   return render(request, "laboratorio_app/editarperfil.html", {'form': form, 'usuario': usuario.username})
+    if request.method == 'POST':
+        form = UserEditform(request.POST, instance=request.user)  # Pasar instancia de usuario actual
+        if form.is_valid():
+            form.save()  # Guardar los cambios en el perfil del usuario
+            return render(request,"laboratorio_app/base.html")  # Redirigir a la página de perfil o a donde desees
+    else:
+        form = UserEditform(instance=request.user)  # Llenar el formulario con los datos del usuario actual
+    
+    return render(request, "laboratorio_app/editarperfil.html", {'form': form, 'usuario': request.user})
 
 
 @login_required
@@ -394,4 +387,3 @@ def agregaravatar(request):
     else:
         form = AvatarFormulario()
     return render(request, "laboratorio_app/agregaravatar.html", {'form': form })
-   
