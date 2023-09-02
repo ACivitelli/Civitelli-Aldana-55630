@@ -1,5 +1,5 @@
-from .forms import *
-from .models import *
+from .forms import Pacientesform,Preguntasforms,Prestacionesform,Profesionalesform,UserEditform,AvatarFormulario,User,RegistroUsuariosForm
+from .models import Avatar,Estudios,Paciente,PreguntasFrecuentes,Profesionales,User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
@@ -330,7 +330,7 @@ def login_request(request):
                 return render(request, "laboratorio_app/login.html", {'form': miForm, 'mensaje': f'Los datos son inválidos'})
         
         else:
-            print('el formulario no es valido')
+            
             return render(request, "laboratorio_app/login.html", {'form': miForm, 'mensaje': f'Los datos son inválidos'})
     
     miForm =   AuthenticationForm()  
@@ -354,7 +354,7 @@ def register(request):
 def editarperfil(request):
    usuario = request.user 
    if request.method == "POST":
-       form = UserEditform (request.POST)
+       form = UserEditform(request.POST)
        if form.is_valid():
            usuario.email = form.cleaned_data.get('email')
            usuario.password1 = form.cleaned_data.get('pasword1')
@@ -390,8 +390,8 @@ def agregaravatar(request):
             # muestra la imagen 
             imagen = Avatar.objects.get(user=request.user.id).imagen.url
             request.session["avatar"] = imagen
-            return render(request,"aplicacion/base.html")
+            return render(request,"laboratorio_app/base.html")
     else:
         form = AvatarFormulario()
-    return render(request, "aplicacion/agregaravatar.html", {'form': form })
+    return render(request, "laboratorio_app/agregaravatar.html", {'form': form })
    
